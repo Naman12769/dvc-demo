@@ -5,6 +5,7 @@ import os
 df=pd.read_csv('F:\\new_downloads\\Ecommerce Customers.csv')
 df=df.iloc[:,3:]
 
-df=df[df['Length of Membership']>3]
+df=df[df['Length of Membership']>1]
+df.drop(columns=['Avg. Session Length'],inplace=True)
 
 df.to_csv(os.path.join('data','customer.csv'))
